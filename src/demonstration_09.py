@@ -13,7 +13,23 @@ Examples:
 - get_middle("middle") -> "dd"
 - get_middle("A") -> "A"
 """
+
+def is_even(n: int):
+    return n % 2 == 0
+
 def get_middle(input_str):
     # Your code here
+    if is_even(len(input_str)):
+        midpoint = len(input_str) // 2
+        #we want to slice from midpoint -1 up to midpoint
+        return input_str[midpoint -1 : midpoint +1]
+
+    else:
+        midpoint = len(input_str) // 2
+        #the // means floor -> no decimal
+        return input_str[midpoint]
 
 
+
+print(get_middle("middle"))
+print(get_middle("testing"))
